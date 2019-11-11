@@ -1,0 +1,73 @@
+{%extends 'base_layout.html'%}
+{% block content %}
+    <h1>Enter The Student Fees of {{stud_pd.Sname}}[{{stud_pd.USN}}]</h1>
+    
+    <h2>Total:{{fee_str.Total}}<br>Paid:{{stud_fee.Paid}}<br>Due:{{stud_fee.Due}}</h2>
+
+    <form class="update-student-fees" action="{% url 'entry:update_stud_fee' usn=stud_pd.USN %}" method="post">
+    {% csrf_token %}
+        {% if fee_str.Apti_1 != stud_fee.Apti_1_Paid %}
+            <label class="header">Aptitude & Personality Devp.Prog = {{fee_str.Apti_1}}</label>                          
+                <input type="checkbox" id="a-option" name="paid1" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.Tech_2 != stud_fee.Tech_2_Paid %}
+            <label class="header">Dept.Magazine & Technical Events = {{fee_str.Tech_2}}</label>                          
+                <input type="checkbox" id="b-option" name="paid2" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.Book_3 != stud_fee.Book_3_Paid %}
+            <label class="header">E-Commerce,E-Journals & E-Books = {{fee_str.Book_3}}</label>                          
+                <input type="checkbox" id="c-option" name="paid3" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.IndP_4 != stud_fee.IndP_4_Paid %}
+            <label class="header">Induction Programme = {{fee_str.IndP_4}}</label>                          
+                <input type="checkbox" id="d-option" name="paid4" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.IndV_5 != stud_fee.IndV_5_Paid %}
+            <label class="header">Ind.Visits & Job Fair Activities = {{fee_str.IndV_5}}</label>                          
+                <input type="checkbox" id="e-option" name="paid5" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.Inte_6 != stud_fee.Inte_6_Paid %}
+            <label class="header">Internet Service Charges = {{fee_str.Inte_6}}</label>                          
+                <input type="checkbox" id="f-option" name="paid6" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.Libr_7 != stud_fee.Libr_7_Paid %}
+            <label class="header">Library Card/other Fee = {{fee_str.Libr_7}}</label>                          
+                <input type="checkbox" id="g-option" name="paid7" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.Semi_8 != stud_fee.Semi_8_Paid %}
+            <label class="header">Seminar and Workshop = {{fee_str.Semi_8}}</label>                          
+                <input type="checkbox" id="h-option" name="paid8" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.Soft_9 != stud_fee.Soft_9_Paid %}
+        <label class="header">Soft Skill & Placement Devp.Programme = {{fee_str.Soft_9}}</label>                          
+            <input type="checkbox" id="i-option" name="paid9" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.Conf_10 != stud_fee.Conf_10_Paid %}
+            <label class="header">Special Lectures & Conferances = {{fee_str.Conf_10}}</label>                          
+                <input type="checkbox" id="j-option" name="paid10" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.Subj_11 != stud_fee.Subj_11_Paid %}
+            <label class="header">Special Training for Add on Subjects = {{fee_str.Subj_11}}</label>                          
+                <input type="checkbox" id="k-option" name="paid11" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.Spor_12 != stud_fee.Spor_12_Paid %}
+            <label class="header">Sports Activities = {{fee_str.Spor_12}}</label>                          
+                <input type="checkbox" id="l-option" name="paid12" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.Tran_13 != stud_fee.Tran_13_Paid %}
+            <label class="header">Transportation Chg = {{fee_str.Tran_13}}</label>                          
+                <input type="checkbox" id="m-option" name="paid13" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.Tuti_14 != stud_fee.Tuti_14_Paid %}
+            <label class="header">TUITION FEE = {{fee_str.Tuti_14}}</label>                          
+                <input type="checkbox" id="n-option" name="paid14" value="True"> <br/>
+        {% endif %}
+        {% if fee_str.Volu_15 != stud_fee.Volu_15_Paid %}
+            <label class="header">Volume Licence = {{fee_str.Volu_15}}</label>                          
+                <input type="checkbox" id="o-option" name="paid15" value="True"><br/>
+        {% endif %}
+        <input type="submit" value="Submit">
+       
+    </form>
+
+{% endblock %}

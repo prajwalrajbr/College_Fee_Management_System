@@ -1,0 +1,25 @@
+{%extends 'base_layout.html'%}
+
+{% block content %}
+    <div class="student-details">
+	    <h1>NAME :- {{stud_pd.Sname}}</h1>
+        <h3>USN :- {{stud_pd.USN}}</h3>
+        <p>GENDER :- {{stud_pd.Gender}}</p>
+        <p>DATE OF BIRTH :- {{stud_pd.DOB}}</p>
+        <p>PLACE OF BIRTH :- {{stud_pd.POB}}</p>
+        <p>PHONE NUMBER :- {{stud_pd.S_Pno}}</p>
+        <p>ADDRESS :- {{stud_pd.S_Add}}</p>
+        <p>BATCH :- {{stud_pd.Batch}}</p>
+        <h3>ADMISSION NUMBER :- {{stud_ad.Adm_No}}</h3>
+        <p>Course :- {{stud_ad.Course}}</p>
+        <p>SEM :- {{stud_ad.Sem}}</p>
+        <p>BRANCH :- {{stud_ad.Branch}}</p>
+        <p>ADMISSION TYPE :- {{stud_ad.Adm_Type}}</p>
+        <p>QUOTA :- {{stud_ad.Quota}}</p>
+                 
+    </div>
+    <div class="fee-update-button">
+        <h2><a href="{% url 'entry:update_stud_fee' usn=stud_pd.USN %}">Update Student Fee</a></h1>
+    
+    </div>
+{% endblock %}
