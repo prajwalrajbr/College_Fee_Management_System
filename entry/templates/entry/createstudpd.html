@@ -6,7 +6,6 @@
     <form class="stud_pd_entry" action="{% url 'entry:create_stud_pd' %}" method="post">
     {% csrf_token %}
         {{form1}}
-        {% csrf_token %}
         {{form2}}
         <input type="submit" value="Submit">
     </form>
